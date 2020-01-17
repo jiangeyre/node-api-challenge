@@ -15,8 +15,8 @@ Go code!
 
 const express = require('express');
 const server = express();
-const actionsRouter = require('./CRUD-Routers/actions');
-const projectsRouter = require('./CRUD-Routers/projects');
+const actionsRouter = require('./CRUD-Routers/actionsRouter');
+const projectsRouter = require('./CRUD-Routers/projectsRouter');
 
 server.use(express.json());
 server.use('/api/actions', actionsRouter);
