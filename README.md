@@ -40,13 +40,28 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    - Express.json allows the browser to parse data and return it as a JSON object. Express.use allows our routers to use different end points as baselines for cleaner subsite code.
+
+
 - [ ] Describe Middleware?
+
+    - Middleware are functions that use request and response to perform operations on them. Then, it is moved to the next middleware or can return a response to the client.
+
 
 - [ ] Describe a Resource?
 
+    - Resources are all that we interact with, accessible by a unique URI. The have multiple representations and are communicated over stateless protocol. Management is done through methods.
+
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+    - It can return a status code 200 and a success message with it.
+
+
 - [ ] How can we partition our application into sub-applications?
+
+    - By utilizing Express routers and their own middleware. 
+
 
 ## Minimum Viable Product
 
