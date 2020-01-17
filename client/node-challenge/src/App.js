@@ -3,6 +3,7 @@ import axios from 'axios';
 
 // styling 
 import './App.css';
+import { BigBoy, BUTT } from './appstyles';
 
 function App() {
   const [data, setData] = useState();
@@ -53,41 +54,44 @@ function App() {
   };
 
   return (
-    <div className="App">
-      {data ? <h1>{data.message}</h1> : <h1></h1>}
-      {actions ? (
-        <div>
-          {actions.map((act, ind) => (
-            <div>
-              <h1>{act.id}</h1>
-              <h2>{act.project_id}</h2>
-              <h2>{act.description}</h2>
-              <h2>{act.notes}</h2>
-              <h2>{act.completed}</h2>
-              <button onClick={() => {deleteActButt(act.id)}}>Delete</button>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <h1></h1>
-      )}
-      {projects ? (
-        <div>
-          {projects.map((proj, ind) => (
-            <div>
-              <h1>{proj.id}</h1>
-              <h2>{proj.project_id}</h2>
-              <h2>{proj.description}</h2>
-              <h2>{proj.notes}</h2>
-              <h2>{proj.completed}</h2>
-              <button onClick={() => {deleteProjButt(proj.id)}}>Delete</button>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <h1></h1>
-      )}
-    </div>
+    <BigBoy>
+      <div className="App">
+        {data ? <h1>{data.message}</h1> : <h1></h1>}
+        {projects ? (
+          <div className="proj-cont">
+            <h1>Projects!</h1>
+            {projects.map((proj, ind) => (
+              <div>
+                <h2>Project ID: {proj.id}</h2>
+                <h2>Name: {proj.name}</h2>
+                <h3>Description: {proj.description}</h3>
+                <h4>Completed: {proj.completed ? "false" : "true"}</h4>
+                <BUTT onClick={() => {deleteProjButt(proj.id)}}>Delete</BUTT>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <h1></h1>
+        )}
+        {actions ? (
+          <div className="actions-cont">
+            <h1>Actions!</h1>
+            {actions.map((act, ind) => (
+              <div>
+                <h2>Action ID: {act.id}</h2>
+                <h3>Attached to project: {act.project_id}</h3>
+                <h3>Description: {act.description}</h3>
+                <h3>Notes: {act.notes}</h3>
+                <h4>Completed: {act.completed ? "false" : "true"}</h4>
+                <BUTT onClick={() => {deleteActButt(act.id)}}>Delete</BUTT>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <h1></h1>
+        )}
+      </div>
+    </BigBoy>
   );
 }
 
