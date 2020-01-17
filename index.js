@@ -15,10 +15,12 @@ Go code!
 
 const express = require('express');
 const server = express();
+const cors = require('cors');
 const actionsRouter = require('./CRUD-Routers/actionsRouter');
 const projectsRouter = require('./CRUD-Routers/projectsRouter');
 
 server.use(express.json());
+server.use(cors());
 server.use('/api/actions', actionsRouter);
 server.use('/api/projects', projectsRouter);
 
