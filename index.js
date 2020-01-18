@@ -12,3 +12,24 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+
+const express = require('express');
+const server = express();
+const cors = require('cors');
+const actionsRouter = require('./CRUD-Routers/actionsRouter');
+const projectsRouter = require('./CRUD-Routers/projectsRouter');
+
+server.use(express.json());
+server.use(cors());
+server.use('/api/actions', actionsRouter);
+server.use('/api/projects', projectsRouter);
+
+server.get('/', (req, res) => {
+    res.send(`<h1> You have successfully loaded into the GRID! 🤖 *cue electronic TRON music* </h1>`)
+});
+
+const port = process.env.PORT || 8000;
+
+server.listen(port, () => {
+    console.log(`Server is running on localhost:${port}`);
+});

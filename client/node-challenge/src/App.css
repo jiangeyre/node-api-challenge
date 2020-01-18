@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+.proj-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid black;
+  padding: 1%;
+  margin-left: 40%;
+  width: 60%;
+  margin-bottom: 3%;
+  background-color: gainsboro;
+  opacity: 0.4;
+}
+
+.actions-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border: 1px solid black;
+  padding: 1%;
+  margin-left: 40%;
+  width: 60%;
+  background-color: gainsboro;
+  opacity: 0.4;
+}
